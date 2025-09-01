@@ -2,13 +2,12 @@ from json import load
 import pygame
 import random
 
-
-# Colors
+# Color variables 
 RED = (255, 0, 0)
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
 
-# Tetriminojen värit
+# Tetrimino colors
 COLORS = {
     "I": (0, 255, 255),  # Cyan
     "O": (255, 255, 0),  # Yellow
@@ -19,7 +18,7 @@ COLORS = {
     "J": (0, 0, 255)  # Blue
 }
 
-# Tetriminojen muodot
+# Tetrimino shapes
 SHAPES = {
     "I": [[1, 1, 1, 1]],  # I tetrimino
     "O": [[1, 1], [1, 1]],  # O tetrimino
@@ -30,6 +29,7 @@ SHAPES = {
     "J": [[1, 1, 1], [0, 0, 1]]  # J tetrimino
 }
 
+#Lopetus is finnish and it means "ending"
 LOPETUS = [
     "Et voita tornilla, höpsö",
     "No hupsista, hävisit",
@@ -52,7 +52,7 @@ last_fall_time = pygame.time.get_ticks()
 last_move_time = pygame.time.get_ticks()
 game_over = False
 
-# Grid to store blocks
+# Grid to for locked/stored blocks
 grid = [[0 for _ in range(SCREEN_WIDTH // GRID_SIZE)] for _ in range(SCREEN_HEIGHT // GRID_SIZE)]
 
 # Initialize pygame
@@ -106,11 +106,11 @@ def clear_row():
     global score
     score += 100
 
-# Fontti
+# Font
 pygame.font.init()
 font = pygame.font.SysFont('Arial', 27)
 
-# Funktio pisteiden näyttämiseksi
+# Function to show your score
 def draw_score(screen, score):
     score_text = font.render(f'Linjoja: {score}', True, WHITE)
     screen.blit(score_text, (10, 10))
