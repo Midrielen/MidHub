@@ -119,7 +119,7 @@ font = pygame.font.SysFont('Arial', 27)
 
 # Function to show your score
 def draw_score(screen, score):
-    score_text = font.render(f'Linjoja: {score}', True, WHITE)
+    score_text = font.render(f'Lines: {score}', True, WHITE)
     screen.blit(score_text, (10, 10))
 
 def game_loop():
@@ -155,7 +155,7 @@ def main():
             screen.blit(game_over_text, (SCREEN_WIDTH // 2 - game_over_text.get_width() // 2, SCREEN_HEIGHT // 2 - game_over_text.get_height() // 2))
             pygame.display.flip()
             font = pygame.font.Font(None, 36)
-            prompt_text = font.render("Do you want to quit? (Y)", True, WHITE, BLACK)
+            prompt_text = font.render("Do you want to quit? (K=yes)", True, WHITE, BLACK)
             screen.blit(prompt_text, (SCREEN_WIDTH // 2 - prompt_text.get_width() // 2, SCREEN_HEIGHT // 2 - prompt_text.get_height() // 2 + 25))
             pygame.display.flip()
 
@@ -166,7 +166,7 @@ def main():
                         running = False
                         waiting_for_input = False
                     elif event.type == pygame.KEYDOWN:
-                        if event.key == pygame.Y_y:
+                        if event.key == pygame.K_k:
                             running = False
                             waiting_for_input = False
 
