@@ -4,35 +4,40 @@ How to run Python-Tetris?
 1. Make sure you have pygame installed, if not, install it. Simple instructions are provited here.
 You can find more information on: www.pygame.org/wiki/GettingStarted#Further%20info%20on%20installation
 
+via Python:
+$ python3 -m pip install -U pygame --user
 
 Debian-based:
-§ sudo apt-get install python3-pygame
+$ sudo apt-get install python3-pygame
 
 Raspbian:
-There are pygame installed out of the box, but it's some old version. So, install newer with:
-§ python3 -m pip install -U pygame --user
+Pygame is installed out of the box, but it's some old version. To install newer one, you can run:
+$ python3 -m pip install -U pygame --user
 
 Fedora/RHEL
-§ sudo yum install python3-pygame
+$ sudo yum install python3-pygame
 
 Arch-based
-§ sudo pamac install python-pygame
-(note that it's "pamac", not "pacman")
+$ sudo pamac install python-pygame
+(note that it's "pamac", not "pacman" and also that according to various sources, you should not run pamac with root privileges)
 
 OpenSUSE:
-§ sudo zypper install python3-pygame
+$ sudo zypper install python3-pygame
 
 ---
 For bad experience:
 ---
 Mac OS:
-§ python3 -m pip install -U pygame --user
+python3 -m pip install -U pygame --user
 
 Windows:
-§ py -m pip install -U pygame --user
+py -m pip install -U pygame --user
+
 
 ----------
 2. To run programs
 
 cd in terminal to the right directory and run Tetris with
-§ python3 Tetris_0.2.py
+$ python3 Tetris_0.2.py
+
+You can also compile this and make it executable so you don't need python or pygame installed
